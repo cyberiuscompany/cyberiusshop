@@ -42,30 +42,36 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
-        <span class="social-label">GitHub:</span>
-        <button class="copy-btn" onclick="copyToClipboard('https://github.com/cyberiuscompany')">Copiar URL</button>
-      </div>
-      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
-        <span class="social-label">YouTube:</span>
-        <button class="copy-btn" onclick="copyToClipboard('https://www.youtube.com/@CyberiusCompany')">Copiar URL</button>
-      </div>
-      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
-        <span class="social-label">PayPal:</span>
-        <button class="copy-btn" onclick="copyToClipboard('https://paypal.me/CyberiusCompany')">Copiar URL</button>
-      </div>
+<footer>
+  <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+    
+    <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="social-label">GitHub:</span>
+      <a class="copy-btn" href="https://github.com/cyberiuscompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: #333; color: white; border: none; border-radius: 5px; text-decoration: none;">
+        Ir a GitHub
+      </a>
     </div>
-    <div style="margin-top: 1rem; text-align: center;">&copy; 2025 Cyberius Company / Todos los derechos Reservados © </div>
-  </footer>
 
-  <script>
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copiado al portapapeles: " + text);
-      });
-    }
-  </script>
+    <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="social-label">YouTube:</span>
+      <a class="copy-btn" href="https://www.youtube.com/@CyberiusCompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: red; color: white; border: none; border-radius: 5px; text-decoration: none;">
+        Ver canal
+      </a>
+    </div>
+
+    <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="social-label">PayPal:</span>
+      <a class="copy-btn" href="https://paypal.me/CyberiusCompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: #0070ba; color: white; border: none; border-radius: 5px; text-decoration: none;">
+        Donar
+      </a>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: #888;">
+    &copy; 2025 Cyberius Company. Todos los derechos reservados.
+  </div>
+</footer>
+
 </body>
 </html>
