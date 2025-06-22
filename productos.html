@@ -17,8 +17,20 @@
       <a href="productos.html">Productos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-    <div class="search-box">
-      <input type="text" id="buscador" placeholder="Buscar productos...">
+    <div class="barra-filtros" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+      <select id="filtroTipo" style="padding: 0.5rem;">
+        <option value="todos">Filtrar por tipo</option>
+        <option value="Pentest Tools">Pentest Tools</option>
+        <option value="Evasion Tools">Evasion Tools</option>
+        <option value="Ransomware">Ransomware</option>
+        <option value="Crypters">Crypters</option>
+        <option value="Exploits">Exploits</option>
+        <option value="Crackers">Crackers</option>
+        <option value="Malware">Malware</option>
+        <option value="Brutes">Brutes</option>
+      </select>
+
+      <input type="text" id="buscador" placeholder="Buscar productos..." style="padding: 0.5rem; width: 250px;">
     </div>
   </header>
 
