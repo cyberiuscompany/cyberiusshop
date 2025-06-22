@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoScan Red - Cyberius Store</title>
+  <link rel="stylesheet" href="../../estilos/estilos.css" />
+  <link rel="stylesheet" href="../../estilos/estilos-productos.css" />
+  <style>
+    footer {
+      padding-top: 1%;
+      padding-bottom: 1%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-terciario);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="home-icon">Home</a>
+      <a href="sobre.html">Sobre Mí</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar productos...">
+    </div>
+  </header>
+
+  <div class="contenido">
+    <div class="detalle-producto">
+      <div class="detalle-izquierda">
+        <div class="carrusel">
+          <button class="carrusel-btn prev">&#10094;</button>
+          <img src="https://raw.githubusercontent.com/cyberiuscompany/cyberiusshop/main/productos/Perm_Scope/icono.png" alt="Perm_Scope" class="active">
+          <img src="https://raw.githubusercontent.com/cyberiuscompany/cyberiusshop/main/productos/Perm_Scope/Foto%20CLI.png" alt="Perm_Scope CLI">
+          <img src="https://raw.githubusercontent.com/cyberiuscompany/cyberiusshop/main/productos/Perm_Scope/Foto%20Gui%20Modo%20Claro.png" alt="Perm_Scope Modo Claro">
+          <img src="https://raw.githubusercontent.com/cyberiuscompany/cyberiusshop/main/productos/Perm_Scope/Foto%20Gui%20Modo%20Oscuro.png" alt="Perm_Scope Modo Oscuro">
+          <button class="carrusel-btn next">&#10095;</button>
+        </div>
+      </div>
+      <div class="detalle-derecha">
+        <h2>Unzip_cracker</h2>
+        <p>Herramienta gráfica en Python para recuperar archivos comprimidos protegidos por contraseña mediante fuerza bruta, la cual soporta los formatos .zip, .rar y .7z. Ideal para entornos forenses, de recuperación o ciberseguridad.</p>
+
+        <ul>
+          <li>Consola con dir y archivo resumen tras extracción.</li>
+          <li>Barra de progreso e historial de intentos.</li>
+          <li>Modo diccionario o contraseña manual.</li>
+          <li>Icono personalizado estilo Cyberius.</li>
+          <li>Icono personalizado estilo Cyberius.</li>
+          <li>Exporta resultado a .txt.</li>
+        </ul>
+
+        <p>Una solución completa para attaques de fuerza bruta, intuitivaa y eficiente en equipos Windows.</p>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="etiqueta">Pentest Tools</span>
+          <span class="etiqueta">GRATIS</span>
+          <a href="https://github.com/cyberiuscompany/Cyberius-Unzip-Cracker" target="_blank" class="etiqueta">ENLACE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">GitHub:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://github.com/cyberiuscompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">YouTube:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://www.youtube.com/@CyberiusCompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">PayPal:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://paypal.me/CyberiusCompany')">Copiar URL</button>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; text-align: center;">&copy; 2025 Cyberius Company</div>
+  </footer>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copiado al portapapeles: " + text);
+      });
+    }
+
+    const imagenes = document.querySelectorAll(".carrusel img");
+    const prevBtn = document.querySelector(".carrusel-btn.prev");
+    const nextBtn = document.querySelector(".carrusel-btn.next");
+    let index = 0;
+
+    function mostrarImagen(n) {
+      imagenes.forEach((img, i) => {
+        img.classList.toggle("active", i === n);
+      });
+    }
+
+    function siguiente() {
+      index = (index + 1) % imagenes.length;
+      mostrarImagen(index);
+    }
+
+    function anterior() {
+      index = (index - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(index);
+    }
+
+    prevBtn.addEventListener("click", anterior);
+    nextBtn.addEventListener("click", siguiente);
+  </script>
+</body>
+</html>
