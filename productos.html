@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos - Cyberius Store</title>
+  <link rel="stylesheet" href="/CyberiusShop/estilos/estilos-productos.css" />
+  <script defer src="/CyberiusShop/scripts/productos.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="home-icon">Home</a>
+      <a href="sobre.html">Sobre Mí</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" id="buscador" placeholder="Buscar productos...">
+    </div>
+  </header>
+
+  <div class="contenido productos">
+    <h1>Catálogo de Productos</h1>
+    <div class="productos-grid" id="lista-productos">
+
+      <div class="producto" data-etiqueta="Pentest Tools">
+        <a href="/CyberiusShop/productos/Perm_Scope/perm-scope.html" target="_blank">
+          <span class="etiqueta">Pentest Tools</span>
+          <img src="/CyberiusShop/productos/Perm_Scope/icono.png" alt="Pentest Tool 1">
+          <h3>Perm_Scope</h3>
+          <p>Herramienta de Análisis para Escala de Priviliegios y encontrar posibles evasiones de AV/EDR+Firewall</p>
+          <span class="precio gratis">GRATIS</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">GitHub:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://github.com/cyberiuscompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">YouTube:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://www.youtube.com/@CyberiusCompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">PayPal:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://paypal.me/CyberiusCompany')">Copiar URL</button>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; text-align: center;">&copy; 2025 Cyberius Company</div>
+  </footer>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copiado al portapapeles: " + text);
+      });
+    }
+  </script>
+</body>
+</html>

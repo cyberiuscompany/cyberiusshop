@@ -1,0 +1,122 @@
+:root {
+  --color-primario: #2d3037;
+  --color-secundario: #939194;
+  --color-terciario: #4f5354;
+  --color-azul: #83f1e8;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+}
+
+header {
+  background-color: var(--color-terciario);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--color-azul);
+  margin-right: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav a.home-icon {
+  font-weight: bold;
+}
+
+nav a.home-icon img {
+  display: none;
+}
+
+
+.search-box input {
+  padding: 0.3rem;
+  background-color: var(--color-primario);
+  border: 1px solid var(--color-secundario);
+  color: white;
+}
+
+.contenido {
+  padding: 2rem;
+}
+
+/* Contenido principal con imagen y texto */
+.contenido-principal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+/* Imagen principal de bienvenida */
+.foto-home {
+  transition: all 0.3s ease-in-out;
+  width: 100%;        /* o un valor fijo como 250px */
+  max-width: 400px;   /* esto limita su ancho */
+  height: auto;       /* mantiene proporciones */
+  border-radius: 12px;
+  display: block;
+}
+
+.foto-home:hover {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+/* Texto junto a la imagen */
+.contenido-principal .texto {
+  flex: 1 1 40%;
+  max-width: 600px;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-terciario);
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-label {
+  margin-right: 0.5rem;
+}
+
+.copy-btn {
+  background-color: var(--color-azul);
+  border: none;
+  color: black;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.copy-btn:hover {
+  opacity: 0.8;
+}

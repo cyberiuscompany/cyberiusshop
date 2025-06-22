@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Cyberius Store</title>
+  <link rel="stylesheet" href="/CyberiusShop/estilos/estilos.css" />
+  <link rel="stylesheet" href="estilos-extra.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="home-icon">
+        <img src="/CyberiusShop/imagenes/icono-casa.svg" alt="Home" /> Home</a>
+      <a href="sobre.html">Sobre Mí</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar..." />
+    </div>
+  </header>
+
+  <div class="contenido">
+    <div class="contenido-principal">
+      <img src="/CyberiusShop/imagenes/Romano Pluma.png" alt="Contacto" class="foto-home" />
+      <div class="texto">
+        <h1>Contacto</h1>
+        <p style="text-align: justify;">
+          Puedes ponerte en contacto conmigo a través de los siguientes medios. Estoy disponible para colaboraciones, soporte técnico o consultas relacionadas con los productos ofrecidos.
+        </p>
+        <ul style="list-style: none; padding: 0; line-height: 1.8;">
+          <li><strong>💬 Discord (Contesto mas rápido):</strong> <a href="cyberius_company" target="_blank">cyberius_company</a></li>
+          <li><strong>📧 Email:</strong> cyberiuscompany@gmail.com</li>
+          <li><strong>💻 GitHub:</strong> <a href="https://github.com/cyberiuscompany" target="_blank">github.com/cyberius</a></li>
+          <li><strong>📺 YouTube:</strong> <a href="https://www.youtube.com/@CyberiusCompany" target="_blank">youtube.com/@cyberius</a></li>
+          <li><strong>💰 PayPal:</strong> <a href="https://paypal.me/CyberiusCompany" target="_blank">paypal.me/cyberius</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">GitHub:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://github.com/cyberiuscompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">YouTube:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://www.youtube.com/@CyberiusCompany')">Copiar URL</button>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="social-label">PayPal:</span>
+        <button class="copy-btn" onclick="copyToClipboard('https://paypal.me/CyberiusCompany')">Copiar URL</button>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; text-align: center;">&copy; 2025 Cyberius Company</div>
+  </footer>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copiado al portapapeles: " + text);
+      });
+    }
+  </script>
+</body>
+</html>
