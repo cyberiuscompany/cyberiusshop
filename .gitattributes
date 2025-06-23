@@ -1,0 +1,9 @@
+# Forzar reconocimiento correcto de lenguajes
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+
+# Opcional: ignora archivos que no son código
+*.ico linguist-documentation
+*.png linguist-documentation
+*.jpg linguist-documentation
