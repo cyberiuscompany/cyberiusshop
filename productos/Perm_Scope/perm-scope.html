@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="/cyberiusshop/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyDorker - Cyberius Store</title>
+  <link rel="stylesheet" href="../../estilos/estilos.css" />
+  <link rel="stylesheet" href="../../estilos/estilos-productos.css" />
+
+  <style>
+    footer {
+      padding-top: 1%;
+      padding-bottom: 1%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-terciario);
+      z-index: 999;
+    }
+
+    .carrusel img {
+      cursor: zoom-in;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #visorGaleria {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .visor-imagen-grande img {
+      max-height: 75vh;
+      max-width: 90vw;
+      border-radius: 10px;
+      box-shadow: 0 0 30px black;
+      margin-bottom: 1rem;
+    }
+
+    .visor-miniaturas {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      overflow-x: auto;
+      max-width: 90vw;
+    }
+
+    .visor-miniaturas img {
+      height: 70px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .visor-miniaturas img:hover {
+      transform: scale(1.1);
+    }
+
+    #cerrarGaleria {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2.5rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html" class="home-icon">Home</a>
+      <a href="/sobre.html">Sobre Mí</a>
+      <a href="/productos.html">Productos</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="contenido">
+    <div class="detalle-producto">
+      <div class="detalle-izquierda">
+        <div class="carrusel">
+          <button class="carrusel-btn prev">&#10094;</button>
+          <img src="/productos/Perm_Scope/icono.png" alt="Perm_Scope" class="active">
+          <img src="/productos/Perm_Scope/Foto CLI.png" alt="Perm_Scope CLI">
+          <img src="/productos/Perm_Scope/Foto Gui Modo Claro.png" alt="Perm_Scope Modo Claro">
+          <img src="/productos/Perm_Scope/Foto Gui Modo Oscuro.png" alt="Perm_Scope Modo Oscuro">
+          <button class="carrusel-btn next">&#10095;</button>
+        </div>
+      </div>
+      <div class="detalle-derecha">
+        <h2>CyDorker</h2>
+        <p>Herramienta para realizar escaneo local sobre un equipo Windows y Linux.</p>dame tdo eso en este formato         <ul>
+          <li>Detección de usuarios y grupos privilegiados.</li>
+          <li>Listado de tareas programadas y servicios con riesgos.</li>
+          <li>Detección de permisos peligrosos en archivos, registros o directorios.</li>
+          <li>Comprobación de configuraciones de red.</li>
+          <li>Evasiones típicas para AV, EDR y Firewalls.</li>
+          <li>Ejecutable en modo gráfico (GUI) o modo consola.</li>
+        </ul>
+        <p>Una solución eficaz para buscar información Local en equipos Windows y Linux y encontrar deibilidades.</p>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="etiqueta">Pentest Tools</span>
+          <span class="etiqueta">Windows + Linux</span>
+          <span class="etiqueta">GRATIS</span>
+          <a href="https://github.com/cyberiuscompany/CyDorker" target="_blank"
+            style="display: inline-flex; align-items: center; gap: 0.4rem; background-color: #333; color: white; padding: 0.4rem 0.8rem; border-radius: 5px; text-decoration: none; margin-top: -0.6%;">
+            <i class="fab fa-github"></i> ENLACE
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="visorGaleria">
+    <div class="visor-imagen-grande">
+      <img id="imagenGrande" src="" alt="Imagen ampliada">
+    </div>
+    <div class="visor-miniaturas" id="miniaturasContainer"></div>
+    <button id="cerrarGaleria">&times;</button>
+  </div>
+
+  <footer>
+    <div class="footer-socials" style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+        <a href="https://github.com/cyberiuscompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: #333; color: white; border-radius: 5px; text-decoration: none;">GitHub</a>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fab fa-youtube" style="font-size: 1.2rem; color: red;"></i>
+        <a href="https://www.youtube.com/@CyberiusCompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: red; color: white; border-radius: 5px; text-decoration: none;">YouTube</a>
+      </div>
+      <div class="social-item" style="display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fab fa-paypal" style="font-size: 1.2rem; color: #0070ba;"></i>
+        <a href="https://paypal.me/CyberiusCompany" target="_blank" style="padding: 0.4rem 0.8rem; background-color: #0070ba; color: white; border-radius: 5px; text-decoration: none;">PayPal</a>
+      </div>
+    </div>
+    <div style="text-align: center; font-size: 0.9rem; color: #888;">
+      &copy; 2025 Cyberius Company. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const imagenes = document.querySelectorAll(".carrusel img");
+    const prevBtn = document.querySelector(".carrusel-btn.prev");
+    const nextBtn = document.querySelector(".carrusel-btn.next");
+    let index = 0;
+
+    function mostrarImagen(n) {
+      imagenes.forEach((img, i) => {
+        img.classList.toggle("active", i === n);
+      });
+    }
+
+    function siguiente() {
+      index = (index + 1) % imagenes.length;
+      mostrarImagen(index);
+    }
+
+    function anterior() {
+      index = (index - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(index);
+    }
+
+    prevBtn.addEventListener("click", anterior);
+    nextBtn.addEventListener("click", siguiente);
+
+    const galeria = document.getElementById("visorGaleria");
+    const miniaturas = document.getElementById("miniaturasContainer");
+    const imagenGrande = document.getElementById("imagenGrande");
+    const cerrarGaleria = document.getElementById("cerrarGaleria");
+
+    imagenes.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        galeria.style.display = "flex";
+        miniaturas.innerHTML = "";
+
+        imagenes.forEach((mini, i) => {
+          const clon = document.createElement("img");
+          clon.src = mini.src;
+          clon.alt = mini.alt;
+          if (i === index) imagenGrande.src = mini.src;
+          clon.addEventListener("click", () => {
+            imagenGrande.src = mini.src;
+          });
+          miniaturas.appendChild(clon);
+        });
+      });
+    });
+
+    cerrarGaleria.addEventListener("click", () => {
+      galeria.style.display = "none";
+      imagenGrande.src = "";
+    });
+
+    galeria.addEventListener("click", (e) => {
+      if (e.target === galeria) {
+        galeria.style.display = "none";
+        imagenGrande.src = "";
+      }
+    });
+  </script>
+</body>
+</html>
