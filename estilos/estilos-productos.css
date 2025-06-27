@@ -258,7 +258,7 @@ nav a.home-icon img {
 }
 
 .visorGaleria {
-  display: none;
+  display: flex;
   position: fixed;
   left: 0;
   height: 100vh;
