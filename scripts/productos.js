@@ -59,3 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mostrarPagina(1);
 });
+document.querySelector('.visorGaleria').classList.remove('visible');
