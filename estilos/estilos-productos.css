@@ -260,7 +260,6 @@ nav a.home-icon img {
 .visorGaleria {
   display: none;
   position: fixed;
-  top: auto;
   left: 0;
   height: 100vh;
   width: 100vw;
