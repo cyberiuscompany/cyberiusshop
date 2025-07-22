@@ -62,7 +62,7 @@ nav a.home-icon img {
 /* Imagen principal de bienvenida */
 .foto-home {
   transition: all 0.3s ease-in-out;
-  width: 100%;        /* o un valor fijo como 250px */
+  width: 900%;        /* o un valor fijo como 250px */
   max-width: 400px;   /* esto limita su ancho */
   height: auto;       /* mantiene proporciones */
   border-radius: 12px;
